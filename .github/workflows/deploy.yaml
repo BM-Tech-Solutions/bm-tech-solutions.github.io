@@ -1,0 +1,19 @@
+name: Deploy Backed App of ESBootcamp
+
+on:
+  push:
+    branches:
+      - esbootcamp
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Upload files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.bm-tech-solutions.com
+          username: bmtech07
+          password: Y78q39pJqnLk
+          server-dir: /esbootcamp.bm-tech-solutions.com/
